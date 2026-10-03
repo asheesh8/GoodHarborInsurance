@@ -8,7 +8,7 @@ export function sendJson(res, status, data) {
   res.end(JSON.stringify(data));
 }
 
-/* Vercel (and server.js) parse JSON bodies into req.body already. */
+/* Vercel (and scripts/dev-server.js) parse JSON bodies into req.body already. */
 export function readJson(req) {
   if (typeof req.body === "string") {
     try {

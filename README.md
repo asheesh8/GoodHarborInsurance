@@ -28,7 +28,7 @@ Node 20+ is the only requirement; there are no dependencies to install.
 | `js/editor.js`, `css/editor.css` | Click-to-edit, loaded inside the editor's preview frame. |
 | `api/publish.js` | Saves the editor's changes (GitHub commit on Vercel, disk locally). |
 | `api/contact.js` | Emails contact-form messages to the office (Resend). |
-| `server.js` | Local dev server; runs `/api` the way Vercel does. |
+| `scripts/dev-server.js` | Local dev server; runs `/api` the way Vercel does. |
 | `assets/images/art/` | Watercolor illustrations made with Higgsfield. |
 | `docs/ASSET-PROVENANCE.md` | Where every image came from. |
 
@@ -62,8 +62,10 @@ Without publishing set up, the Publish tab offers a `content.json` download inst
 
 ## Deploying (Vercel)
 
-Import the repo into Vercel with no build command. Then add these environment
-variables (see `.env.example`):
+Import the repo into Vercel. `vercel.json` sets the framework to "Other"
+(`"framework": null`), so Vercel serves the files as they are and turns `api/`
+into functions; there is no build step. Then add these environment variables
+(see `.env.example`):
 
 - `ADMIN_PASSWORD`: the editor password. Make it long; the endpoint slows down guesses but has no lockout.
 - `GITHUB_TOKEN`, `GITHUB_REPO`, `GITHUB_BRANCH`: a fine-grained token with *Contents: read and write* on this repo only.

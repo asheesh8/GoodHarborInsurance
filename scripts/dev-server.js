@@ -12,21 +12,24 @@
 import http from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-const ROOT = path.dirname(fileURLToPath(import.meta.url));
+/* This file lives in scripts/; the site is the folder above. It sits here
+   (not at the top level) so Vercel doesn't mistake it for a Node server app. */
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+process.chdir(ROOT);
 const PORT = Number(process.env.PORT) || 3040;
 
 process.env.LOCAL_PUBLISH ??= "1";
 process.env.ADMIN_PASSWORD ??= "harbor";
 
 const API_ROUTES = {
-  "/api/publish": "./api/publish.js",
-  "/api/contact": "./api/contact.js",
+  "/api/publish": "api/publish.js",
+  "/api/contact": "api/contact.js",
 };
 
 /* Folders that exist in the project but are never part of the website. */
-const PRIVATE = ["/client-assets", "/api", "/scripts", "/partials", "/docs", "/node_modules", "/.", "/server.js", "/package.json"];
+const PRIVATE = ["/client-assets", "/api", "/scripts", "/partials", "/docs", "/node_modules", "/.", "/package.json"];
 
 const TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -53,9 +56,9 @@ async function readBody(req) {
   }
 }
 
-async function runApi(req, res, modulePath) {
+async function runApi(req, res, file) {
   req.body = await readBody(req);
-  const { default: handler } = await import(`${modulePath}?t=${Date.now()}`);
+  const { default: handler } = await import(`${pathToFileURL(path.join(ROOT, file))}?t=${Date.now()}`);
   await handler(req, res);
 }
 

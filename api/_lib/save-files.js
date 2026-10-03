@@ -5,7 +5,7 @@
     optionally GITHUB_BRANCH (default "main"). Every file goes into a single
     commit; Vercel sees the commit and redeploys the site in about a minute.
 
-  - This computer (npm run dev). server.js sets LOCAL_PUBLISH, and files are
+  - This computer (npm run dev). scripts/dev-server.js sets LOCAL_PUBLISH, and files are
     written straight into the project folder.
 
   files: [{ path: "data/content.json", content: Buffer }]
