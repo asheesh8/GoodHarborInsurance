@@ -1,0 +1,13 @@
+# Raw source media (Wix originals, Higgsfield masters). Large, and not part of the site.
+client-assets/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Tooling
+node_modules/
+.vercel/
+.claude/
+.DS_Store

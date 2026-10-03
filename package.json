@@ -1,0 +1,14 @@
+{
+  "name": "good-harbor-insurance",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Website and site editor for Good Harbor Insurance Group, Burlington VT.",
+  "scripts": {
+    "dev": "node server.js",
+    "layout": "node scripts/sync-layout.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

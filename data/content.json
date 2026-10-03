@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "updated": "2026-10-03T00:00:00.000Z",
+  "site": {
+    "phone": "802-458-5500",
+    "email": "office@ghrsolutions.com",
+    "street": "7 Kilburn St, Suite 303",
+    "city": "Burlington, VT 05401",
+    "hours": "Monday to Friday, 9 AM to 5 PM",
+    "payment": "https://payv3.xpress-pay.com/pt/051c36d8714911f08d73005056b805a0",
+    "reviews": "https://www.google.com/maps?cid=16932459026818706292"
+  },
+  "team": [
+    { "name": "Leah Olave", "role": "Owner / Agent", "photo": "/assets/images/team/leah-olave.webp", "featured": true },
+    { "name": "Louis Olave", "role": "Owner / Agent", "photo": "/assets/images/team/louis-olave.webp", "featured": true },
+    { "name": "Kate Parker", "role": "Employee Benefits Division Partner", "photo": "/assets/images/team/kate-parker.webp", "featured": true },
+    { "name": "Angela Olave", "role": "Director of Operations", "photo": "/assets/images/team/angela-olave.webp", "featured": true },
+    { "name": "Danielle Petty", "role": "Agent", "photo": "/assets/images/team/danielle-petty.webp", "featured": false },
+    { "name": "Keith Marino", "role": "Agent", "photo": "/assets/images/team/keith-marino.webp", "featured": false },
+    { "name": "Chad Piché", "role": "Agent", "photo": "", "featured": false },
+    { "name": "Brigett Colmenero", "role": "Agent", "photo": "/assets/images/team/brigett-colmenero.webp", "featured": false },
+    { "name": "Becca Sion", "role": "Agent", "photo": "/assets/images/team/becca-sion.webp", "featured": false },
+    { "name": "Callista Magwire", "role": "Administrator", "photo": "/assets/images/team/callista-magwire.webp", "featured": false },
+    { "name": "Megan Calla", "role": "Attorney, Strategic Partner", "photo": "/assets/images/team/megan-calla.webp", "featured": false }
+  ],
+  "pages": {}
+}

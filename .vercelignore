@@ -1,0 +1,9 @@
+# Project files that aren't part of the public website.
+client-assets
+partials
+scripts
+docs
+server.js
+README.md
+CLIENT-QUESTIONS.md
+.env.example

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site editor | Good Harbor Insurance Group</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/assets/images/brand/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500&display=swap">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+  <!-- Top bar -------------------------------------------------------------->
+  <header class="topbar">
+    <div class="brand">
+      <img src="/assets/images/brand/logo-white.webp" alt="Good Harbor Insurance Group" width="954" height="245">
+      <span>Site editor</span>
+    </div>
+    <p class="status" data-status><span class="dot"></span><span data-status-text>Loading…</span></p>
+    <div class="topbar-actions">
+      <a class="button ghost" href="/?preview" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg>
+        Preview site
+      </a>
+      <button class="button ghost" type="button" data-discard>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7v6h6"/><path d="M3.5 13a9 9 0 1 0 2.1-6.4L3 9"/></svg>
+        Undo all
+      </button>
+      <button class="button sunset" type="button" data-open-tab="publish">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Publish
+      </button>
+    </div>
+  </header>
+
+  <div class="shell">
+
+    <!-- Sidebar ------------------------------------------------------------>
+    <aside class="sidebar">
+      <nav class="tabs" aria-label="Editor sections">
+        <button type="button" data-tab="pages" class="on">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          Pages
+        </button>
+        <button type="button" data-tab="business">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Business details
+        </button>
+        <button type="button" data-tab="team">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+          Team
+        </button>
+        <button type="button" data-tab="publish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          Publish
+          <span class="badge" data-badge hidden>0</span>
+        </button>
+        <button type="button" data-tab="help">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>
+          Help
+        </button>
+      </nav>
+
+      <div class="page-list" data-page-list-wrap>
+        <h2>Pages</h2>
+        <div data-page-list></div>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <!-- Pages: the live page in a frame ---------------------------------->
+      <section class="panel on" data-panel="pages">
+        <div class="stage-bar">
+          <p class="tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg>
+            Click any text to change it. Click a photo to replace it.
+          </p>
+          <select class="page-select" data-page-select aria-label="Choose a page"></select>
+          <div class="widths" data-widths>
+            <button type="button" data-width="full" class="on" title="Computer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </button>
+            <button type="button" data-width="tablet" title="Tablet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
+            </button>
+            <button type="button" data-width="phone" title="Phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="stage" data-stage data-width="full">
+          <iframe class="frame" data-frame title="The page you're editing"></iframe>
+        </div>
+        <p class="toast" data-toast hidden></p>
+      </section>
+
+      <!-- Business details ------------------------------------------------->
+      <section class="panel" data-panel="business">
+        <div class="scroll">
+          <div class="panel-head">
+            <h1>Business details</h1>
+            <p>These appear on every page: in the header, the footer, the contact page and every "Call us" button. Change them once here.</p>
+          </div>
+          <form class="form-card" data-business-form>
+            <label>Phone number <input type="tel" name="phone" placeholder="802-458-5500"></label>
+            <label>Email address <input type="email" name="email" placeholder="office@ghrsolutions.com"></label>
+            <label>Street address <input type="text" name="street" placeholder="7 Kilburn St, Suite 303"></label>
+            <label>Town, state and ZIP <input type="text" name="city" placeholder="Burlington, VT 05401"></label>
+            <label>Office hours <input type="text" name="hours" placeholder="Monday to Friday, 9 AM to 5 PM"></label>
+            <label>"Pay my bill" web address <input type="url" name="payment"></label>
+            <label>Google reviews web address <input type="url" name="reviews"></label>
+          </form>
+        </div>
+      </section>
+
+      <!-- Team ------------------------------------------------------------->
+      <section class="panel" data-panel="team">
+        <div class="scroll">
+          <div class="panel-head">
+            <h1>Team</h1>
+            <p>Everyone here appears on the <strong>Our team</strong> page, in this order. Tick <strong>Home page</strong> to also show someone in the team preview. Click a photo to change it.</p>
+          </div>
+          <div class="team-list" data-team-list></div>
+          <button class="button light" type="button" data-add-person>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            Add a person
+          </button>
+          <input type="file" accept="image/*" hidden data-portrait-picker>
+        </div>
+      </section>
+
+      <!-- Publish ---------------------------------------------------------->
+      <section class="panel" data-panel="publish">
+        <div class="scroll">
+          <div class="panel-head">
+            <h1>Publish your changes</h1>
+            <p>Until you publish, your changes are only saved on this computer. Nobody visiting the website can see them yet.</p>
+          </div>
+
+          <h2>What you changed</h2>
+          <div class="changes" data-changes></div>
+
+          <!-- Shown when the site can publish by itself -->
+          <div class="form-card" data-publish-ready hidden>
+            <h2>Put them live</h2>
+            <label>Editor password
+              <input type="password" autocomplete="current-password" data-password>
+            </label>
+            <button class="button harbor big" type="button" data-publish>Publish now</button>
+            <p class="publish-message" role="status" data-publish-message></p>
+          </div>
+
+          <!-- Shown when publishing isn't set up: hand the file over instead -->
+          <div class="form-card" data-publish-manual hidden>
+            <h2>Put them live</h2>
+            <p>Publishing straight from here isn't switched on for this site yet. Download the content file and send it to your web team. They'll put it live.</p>
+            <div class="row">
+              <button class="button harbor" type="button" data-download>Download content.json</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Help ------------------------------------------------------------->
+      <section class="panel" data-panel="help">
+        <div class="scroll prose">
+          <div class="panel-head">
+            <h1>How the editor works</h1>
+            <p>You can change the words and photos on the website from here, without any code.</p>
+          </div>
+          <div class="form-card">
+            <h2>Changing words</h2>
+            <ul>
+              <li>Open <strong>Pages</strong> and choose a page on the left.</li>
+              <li>Move your mouse over the page. Anything with a dashed blue outline can be changed. Click it and type.</li>
+              <li>The black toolbar can make words <strong>bold</strong> or <em>italic</em>, add a link, change size, alignment or color.</li>
+              <li>Press <strong>Done</strong> (or the Esc key) when you're finished with a piece of text.</li>
+              <li>The curved arrow puts that one piece of text back the way it is on the live site.</li>
+            </ul>
+          </div>
+          <div class="form-card">
+            <h2>Lists</h2>
+            <p>For bullet points, the states list, office boxes and the facts on the home page, the toolbar also shows <strong>Add one</strong> (copies the item you're in) and <strong>Remove</strong>.</p>
+          </div>
+          <div class="form-card">
+            <h2>Photos</h2>
+            <p>Click a photo, then <strong>Choose a new photo</strong>. It's shrunk to a web-friendly size automatically. Please add a short description of the photo for visitors who use screen readers.</p>
+          </div>
+          <div class="form-card">
+            <h2>Phone, address and team</h2>
+            <p>These show up in many places, so they have their own tabs: <strong>Business details</strong> and <strong>Team</strong>. Clicking them on a page takes you there.</p>
+          </div>
+          <div class="form-card">
+            <h2>Publishing</h2>
+            <p>Your changes are saved on this computer as you go. When you're happy, open <strong>Publish</strong>, enter the editor password and press <strong>Publish now</strong>. The live website updates in about a minute.</p>
+            <p><strong>Preview site</strong> (top right) shows the whole website with your unpublished changes, so you can click around before publishing.</p>
+          </div>
+          <div class="form-card">
+            <h2>Getting back here</h2>
+            <p>Go to <strong>goodharborinsurance.com/admin</strong>, or click the logo at the bottom of any page three times quickly.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

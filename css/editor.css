@@ -1,0 +1,126 @@
+/* Styles for the in-page editor (js/editor.js). Only loaded inside /admin. */
+
+/* Show what can be edited. */
+.is-editing [data-edit],
+.is-editing [data-edit-list] {
+  outline: 2px dashed transparent;
+  outline-offset: 4px;
+  border-radius: 4px;
+  cursor: text;
+}
+.is-editing [data-edit]:hover,
+.is-editing [data-edit-list]:hover { outline-color: rgba(35, 105, 138, 0.75); }
+
+.is-editing img[data-edit-img] { cursor: pointer; }
+.is-editing img[data-edit-img]:hover { outline: 3px dashed #eab08a; outline-offset: -6px; }
+
+.is-editing [data-site]:hover,
+.is-editing [data-team]:hover { outline: 2px dotted #b9761b; outline-offset: 3px; cursor: help; }
+
+.is-editing .editor-active {
+  outline: 2px solid #23698a !important;
+  outline-offset: 4px;
+  background: rgba(142, 216, 248, 0.12);
+}
+
+/* Toolbar and photo panel */
+.editor-ui {
+  position: fixed;
+  z-index: 2147483000;
+  font: 600 14px/1 "Public Sans", system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.editor-ui[hidden] { display: none !important; }
+.editor-ui svg { width: 17px; height: 17px; }
+
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+  max-width: min(760px, 96vw);
+  padding: 6px;
+  background: #142425;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+.editor-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.editor-toolbar button:hover { background: rgba(255, 255, 255, 0.15); }
+.editor-toolbar button.on { background: #23698a; }
+.editor-toolbar .sep { width: 1px; height: 22px; margin: 0 3px; background: rgba(255, 255, 255, 0.22); }
+.editor-toolbar .swatch {
+  min-width: 0;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--swatch);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+.editor-toolbar .swatch[data-color=""] {
+  background: linear-gradient(135deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%);
+}
+.editor-toolbar .danger:hover { background: #a3261b; }
+.editor-toolbar .done { padding: 0 14px; background: #f2c6a6; color: #1d2a2b; }
+.editor-toolbar .done:hover { background: #eab08a; }
+.editor-toolbar:not(.is-list) .list-only { display: none; }
+
+.editor-panel {
+  width: min(340px, 92vw);
+  overflow: hidden;
+  background: #fffdf9;
+  color: #1d2a2b;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+.editor-panel header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: #142425;
+  color: #fff;
+}
+.editor-panel header button { margin-left: auto; border: 0; background: none; color: inherit; cursor: pointer; }
+.editor-panel .body { display: grid; gap: 12px; padding: 14px; }
+.editor-panel label { display: grid; gap: 6px; font-weight: 600; font-size: 13px; line-height: 1.35; color: #485557; }
+.editor-panel input {
+  padding: 10px 12px;
+  border: 2px solid #dcd3c4;
+  border-radius: 8px;
+  font: 400 15px/1.3 "Public Sans", system-ui, sans-serif;
+}
+.editor-panel input:focus { border-color: #23698a; outline: none; }
+.editor-panel .row { display: flex; gap: 8px; }
+.editor-panel .body button {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: #1f3b3c;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.editor-panel .body button.quiet { background: #efe8dc; color: #1f3b3c; }
+.editor-panel .hint { margin: 0; font: 400 12.5px/1.45 "Public Sans", system-ui, sans-serif; color: #485557; }
