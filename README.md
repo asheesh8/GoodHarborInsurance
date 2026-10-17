@@ -9,10 +9,14 @@ opened and read as-is. A built-in site editor at `/admin` lets the owners change
 words, photos, business details and the team list, and publish without code.
 
 ```bash
-npm run dev        # http://localhost:3040   (editor: /admin, password "harbor")
+npm run dev        # http://localhost:3040   (editor: /admin)
 ```
 
 Node 20+ is the only requirement; there are no dependencies to install.
+
+**Live:** https://good-harbor-insurance.vercel.app (production domain: goodharborinsurance.com)
+
+For local editing, export `ADMIN_PASSWORD` in your shell before `npm run dev` (otherwise `scripts/dev-server.js` uses a local-only default); never commit a real password.
 
 ## Where things live
 
